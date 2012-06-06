@@ -156,7 +156,7 @@ function itemMaintenance($new,$input) {
 		<td align=right><b>Cost $</b></td>\n
 		<td><input type=text $cost name=cost size=6></td></tr>\n";
 	echo "<tr><td align=right><b>Long <br />Descript.</b></td>
-		<td colspan=3><input type=text $long name='longdescription' size=40 /></td></tr>";
+		<td colspan=3><input type=text $long name='longdescription' size=46 /></td></tr>";
 	echo "</table>\n";
 	echo "<hr>\n";
 	echo "<table border=0 cellpadding=5 cellspacing=0 width='100%'>\n<tr>";
