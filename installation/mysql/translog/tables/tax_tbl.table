@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS `tax_tbl` (
+  `id` tinyint(2) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `rate` double NOT NULL,
+  `fsrate` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
