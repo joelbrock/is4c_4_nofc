@@ -108,8 +108,9 @@ if ($new == 1 && ($submit)) {
 		p.deposit='$deposit',
 		p.props='$prop',
 		d.brand='$vendor',
-		d.cost='$cost'
-		where p.upc = d. upc AND p.upc ='$upc'";
+		d.cost='$cost',
+		d.description='$longdescription'
+		where p.upc = d.upc AND p.upc ='$upc'";
 	$result = mysql_query($query) OR die(mysql_error() . "<br />" . $query);
 	// echo $query;
 }

@@ -107,7 +107,8 @@ function itemMaintenance($new,$input) {
 				p.tax AS tax,
 				p.inUse AS inUse,
 				d.cost AS cost, 
-				d.brand AS brand
+				d.brand AS brand,
+				d.description AS longdescription
  			FROM " . PRODUCTS_TBL . " p, product_details d WHERE p.upc = d.upc AND p.upc = '$upc'";
 		$resultItem = mysql_query($queryItem);
 		if (!$resultItem) { die("Query: $queryItem<br />Error:".mysql_error()); }
@@ -120,6 +121,7 @@ function itemMaintenance($new,$input) {
 	$desc = ($new != 1) ? 'value="' . $rowItem['description'] . '"' : '';
 	$pric = ($new != 1) ? "value='" . $rowItem['normal_price'] . "'" : "";
 	$vend = ($new != 1) ? 'value="' . $rowItem['brand'] . '"' : '';
+	$long = ($new != 1) ? 'value="' . $rowItem['longdescription'] . '"' : '';
 	// $acti = ($new != 1) ? "action='updateItems.php'" : "action='insertItem.php'";
 	$acti = "action='updateItems.php/?new=$new&upc=$upc'";
 	$csel = ($new != 1) ? $rowItem : $row;
@@ -153,6 +155,8 @@ function itemMaintenance($new,$input) {
 		<td><input type=text size=30 $vend name=vendor></td>
 		<td align=right><b>Cost $</b></td>\n
 		<td><input type=text $cost name=cost size=6></td></tr>\n";
+	echo "<tr><td align=right><b>Long <br />Descript.</b></td>
+		<td colspan=3><input type=text $long name='longdescription' size=46 /></td></tr>";
 	echo "</table>\n";
 	echo "<hr>\n";
 	echo "<table border=0 cellpadding=5 cellspacing=0 width='100%'>\n<tr>";
