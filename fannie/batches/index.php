@@ -67,6 +67,7 @@ echo '</form>';
 		        	<option value=1>Regular &amp; CAP Sale</option>
 		        	<option value=2>Member-Only Special</option>
 		        	<option value=3>Price Change</option>
+					<option value=5>BlowOut</option>
 				</select>
 			</td>
 			<td><input type=text name=batchName></td>
@@ -113,6 +114,9 @@ while($batchListW = mysql_fetch_array($batchListR)){
 				break;
 			case '4':
 				echo "local";
+				break;
+			case '5':
+				echo "blowout";
 				break;
 		}
 	   	echo "</td><td>" . $batchListW['startDate'] . "</td>";
