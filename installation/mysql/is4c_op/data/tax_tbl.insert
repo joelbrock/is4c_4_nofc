@@ -1,0 +1,5 @@
+USE is4c_op;
+INSERT INTO `tax_tbl` (`id`, `name`, `rate`, `fsrate`) VALUES
+(1, 'City Tax', 4.5, 0),
+(2, 'State Tax', 9, 9),
+(3, 'Hot Food', 8.5, 8.5);

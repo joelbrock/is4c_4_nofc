@@ -1,5 +1,5 @@
 <?php
-include ('../define.conf');
+require_once('../define.conf');
 ?>
 <!-- 	INSERT JAVASCRIPT HEAD TAGS HERE -->
 <script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js" type="text/javascript"></script>    		    
