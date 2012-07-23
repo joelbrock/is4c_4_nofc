@@ -7,9 +7,9 @@
 <?php include_once('../src/head.php'); ?>
 </head>
 <body bgcolor="FFFFFF">
-<!--<div id="banner">
+<div id="banner">
 	development area
-</div>-->
+</div>
 
 <div id="time_btn">
 	<p><a href="../timesheet/timesheet.php" title="Click to log hours">Time</a></p>

@@ -119,16 +119,17 @@ echo "<td>End Date: <input type=text name=enddate value=\"$batchInfoW[2]\" size=
 echo "<td><input type=submit value=\"Change Dates\" name=datechange></td>";
 echo "<input type=hidden name=batchID value=$batchID>";
 echo "</form>";
-echo "<td>
-<form action='saletags.php' method=POST target=_blank>\n
-	<button name=tags type=submit>Generate sale tags</button>\n
-	<input type=hidden name=batchID value='" . $batchID . "'>\n
-</form>\n";	
-	
-// echo "<form action='saletags-9up.php' method=POST target=_blank>	
-// 	<button name=9up type=submit>9up</button>\n
+echo "<td>";
+
+// echo "<form action='saletags.php' method=POST target=_blank>\n
+// 	<button name=tags type=submit>Generate sale tags</button>\n
 // 	<input type=hidden name=batchID value='" . $batchID . "'>\n
-// </form>";
+// </form>\n";	
+	
+echo "<form action='saletags-9up.php' method=POST target=_blank>	
+	<button name=9up type=submit>Generate sale tags</button>\n
+	<input type=hidden name=batchID value='" . $batchID . "'>\n
+</form>";
 
 echo "</td></tr>";
 
