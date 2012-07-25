@@ -149,6 +149,9 @@ while($batchListW = mysql_fetch_array($batchListR)){
 			case '4':
 				echo "local";
 				break;
+			case '5':
+				echo "blowout";
+				break;
 		}
 	   	echo "</td><td>" . $batchListW['startDate'] . "</td>";
 	   	echo "<td>" . $batchListW['endDate'] . "</td>";
