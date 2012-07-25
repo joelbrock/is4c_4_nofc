@@ -44,7 +44,7 @@
         exit;
     }        
 	
-    $query = "SELECT pd.brand AS brand, SUBSTR(p.description,1,20) AS description, p.normal_price AS nprice, b.salePrice AS sprice
+    $query = "SELECT pd.brand AS brand, SUBSTR(p.description,1,20) AS description, pd.description AS ldescription, p.normal_price AS nprice, b.salePrice AS sprice
                 FROM product_details AS pd
                 INNER JOIN batchList AS b ON (pd.upc = b.upc)
                 INNER JOIN " . PRODUCTS_TBL . " AS p ON (p.upc = b.upc)
@@ -143,7 +143,17 @@ define('FPDF_FONTPATH','font/');
    * instantiate variables for printing on barcode from 
    * $testQ query result set
    */
-     $product = ucwords(strtolower($row['description']));
+     $product = $row['ldescription'];
+
+	 if (strlen($product) > 20) {
+		$product_fontsize = 11;
+		$product_len = 30;
+  	 } else {
+		$product_fontsize = 13;
+		$product_len = 20;
+ 	 }
+	 $product = substr($product, 0, $product_len);
+	
      $brand = ucwords(strtolower($row['brand']));
      $nprice = '$' . number_format($row['nprice'],2);
      $sprice = '$' . number_format($row['sprice'],2);
@@ -170,7 +180,7 @@ define('FPDF_FONTPATH','font/');
   $pdf->Cell($w-25.4,4,'Regular Price  ' . $nprice,0,0,'C');
   // $pdf->SetXY($priceLeft,$npriceTop);
   // $pdf->Cell($w-25.4,4,$nprice,0,0,'R');
-  $pdf->SetFont('Arial','B',13);
+  $pdf->SetFont('Arial','B',$product_fontsize);
   $pdf->SetXY($x, $productTop);
   $pdf->Cell($w,6,$product,0,0,'C');
   $pdf->SetFont('Arial','I',10);
