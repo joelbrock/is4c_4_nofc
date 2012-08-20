@@ -83,8 +83,8 @@ define('FPDF_FONTPATH','font/');
   $npriceTop = 64;
   $endDateTop = 69;
   $tagCount = 0;
-  $down = 80;
-  $LeftShift = 63;
+  $down = 76;
+  $LeftShift = 60;
   $lineStartX = $x + 10;
   $lineStopX = $x + $w - 10;
   $lineStartY = 38;
@@ -97,7 +97,7 @@ define('FPDF_FONTPATH','font/');
    
   while ($row = mysql_fetch_array($result)){
      /**
-      * check to see if we have made 6 tags.
+      * check to see if we have made 9 tags.
       * if we have start a new page....
       */
       
