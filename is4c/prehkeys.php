@@ -152,6 +152,7 @@ function setMember($id) {
 		}
 		if(!$_SESSION['memType']) $_SESSION['memType'] = 0;
 		if(!$_SESSION['isStaff']) $_SESSION['isStaff'] = 0;
+        if(!$_SESSION['percentDiscount']) $_SESSION['percentDiscount'] = 0;
 		sql_query("update localtemptrans set percentDiscount = ".$_SESSION["percentDiscount"].", memType = ".$_SESSION["memType"].", staff = ".$_SESSION["isStaff"], $conn2);
 		sql_query("update localtemptrans set trans_status = 'X' where voided IN(9,10)", $conn2);   // voided IN(9,10) for stackable discounts (needbased & MAD coupon)		
 	}
